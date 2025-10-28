@@ -18,4 +18,5 @@ ArgoCD default configurations will give Argo Admin role to the group "cluster-ad
 
 ## 3 - Manage all files in [gitops/infra](gitops/infra) by ArgoCD
 
-- `oc apply -f gitops/infra/applicationSet.yaml`
+1. Creates ArgoCD project, Connects to https://github.com/MooseStack/openshift_cluster_settings.git, and creates ArgoCD ApplicationSet to track gitops/infra folder:
+  - `oc apply -f gitops/infra/prerequisites`

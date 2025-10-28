@@ -1,0 +1,72 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: gitops-infra-applicationset
+  namespace: openshift-gitops
+spec:
+  goTemplate: true
+  generators:
+    - list:
+        elements:
+        ## List of folders under gitops/infra to create Applications for
+          - name: argocd
+            namespace: openshift-gitops
+            autoSync: true
+          - name: clusterwide
+            namespace: default
+            autoSync: true
+            syncOptions:
+              - ServerSideApply=true
+              - RespectIgnoreDifferences=true
+            annotations:
+              argocd.argoproj.io/compare-options: ServerSideDiff=true,IncludeMutationWebhook=true
+            # ignoreDifferences:
+            #   - group: ""
+            #     kind: Secret
+            #     name: testabc
+            #     namespace: someNamespace
+            #     jsonPointers:
+            #       - /data
+
+  template:
+    metadata:
+      name: "gitops-infra-{{ .name }}"
+    spec:
+      project: "gitops-infra"
+      source:
+        repoURL: https://github.com/MooseStack/openshift_cluster_settings.git
+        targetRevision: HEAD
+        path: "gitops/infra/{{ .name }}"
+        kustomize:
+          commonLabels:
+            gitops-managed-by-git-repo: openshift_cluster_settings
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .namespace }}"
+  templatePatch: |
+    {{- if .annotations }}
+    metadata:
+      annotations:
+        {{- range $key, $value := .annotations }}
+        {{ $key  }}: "{{ $value }}"
+        {{- end }}
+    {{- end }}
+    spec:
+      syncPolicy:
+        {{- if .autoSync }}
+        automated:
+          prune: {{ default "true" .prune }}
+          selfHeal: {{ default "true" .selfHeal }}
+        {{- end }}
+        managedNamespaceMetadata:
+          labels:
+            app.kubernetes.io/managed-by: argocd
+        syncOptions:
+          - CreateNamespace=true
+        {{- range $syncOptions := .syncOptions }}
+          - {{ $syncOptions }}
+        {{- end }}
+      {{- if .ignoreDifferences }}
+      ignoreDifferences:
+        {{ .ignoreDifferences | toYaml | nindent 4 }}
+      {{- end }}
