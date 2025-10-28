@@ -3,3 +3,5 @@ namespace: openshift-gitops
 resources:
   - immich_appProject.yaml
   - pgvector_appProject.yaml
+  - tailscale_appProject.yaml
+  - tailscale_gitrepo.yaml
