@@ -11,5 +11,5 @@ data:
   project: dGFpbHNjYWxlCg== #tailscale
   type: Z2l0 #git
   url: aHR0cHM6Ly9naXRodWIuY29tL01vb3NlU3RhY2svdGFpbHNjYWxlX2hlbG0uZ2l0 #https://github.com/MooseStack/tailscale_helm.git
-type: Opaquetailscale
+type: Opaque
 
