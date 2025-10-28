@@ -1,0 +1,5 @@
+# namespace: 
+
+resources:
+  - KubeletConfig.yaml
+  - default-storageclass.yaml

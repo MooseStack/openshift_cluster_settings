@@ -1,0 +1,39 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: gitops-infra-applicationset
+spec:
+  generators:
+    # gitops/infra
+    - git:
+        repoURL: https://github.com/MooseStack/openshift_cluster_settings.git
+        revision: main
+        directories:
+          - path: infra/*
+    - list:
+        elements:
+          - project: gitops-infra
+            path: infra/*
+
+  template:
+    metadata:
+      name: '{{path.basename}}'
+    spec:
+      project: '{{project}}'
+      source:
+        repoURL: '{{repoURL}}'
+        targetRevision: '{{revision}}'
+        path: '{{path}}'
+        kustomize:
+          commonLabels:
+            gitops-managed-by: https://github.com/MooseStack/openshift_cluster_settings.git
+            namePrefix: gitops-infra-
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: default   # kustomization.yaml can override this if defined there
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+      # ensure namespace is created if it does not exist
+      createNamespace: true

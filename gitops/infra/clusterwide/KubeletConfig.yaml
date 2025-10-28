@@ -1,0 +1,11 @@
+## Allows 500 pods per node instead of the default 250 for on-prem openshift
+apiVersion: machineconfiguration.openshift.io/v1
+kind: KubeletConfig
+metadata:
+  name: custom-kubelet-config
+spec:
+  kubeletConfig:
+    maxPods: 500
+  machineConfigPoolSelector:
+    matchLabels:
+      pools.operator.machineconfiguration.openshift.io/worker: ''

@@ -1,0 +1,8 @@
+# Services like ArgoCD on OpenShift will reference this group to map to ArgoCD Admin role
+
+apiVersion: user.openshift.io/v1
+kind: Group
+metadata:
+  name: cluster-admins
+users:
+  - mb

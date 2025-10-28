@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: immich
+  namespace: openshift-gitops
+spec:
+  description: "Argo CD project for Immich applications"
+  # Allow this project to track manifests from any git repo. Narrow this if you
+  # want to restrict to a specific repo (e.g. https://github.com/your-org/immich)
+  sourceRepos:
+    - '*'
+  # Allow deployment to only a specific namespace in the in-cluster Kubernetes API server.
+  destinations:
+    - namespace: 'immich'
+      server: 'https://kubernetes.default.svc'
+  # Allow namespace-scoped resources if your apps need them. Remove or restrict
+  # this if you want to enforce least privilege.
+  namespaceResourceWhitelist:
+    - group: '*'
+      kind: '*'
