@@ -42,4 +42,4 @@ spec:
       kind: Secret
       name: tailscale-secret
       jsonPointers:
-        - /stringData/
+        - /data/
