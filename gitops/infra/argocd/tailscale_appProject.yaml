@@ -18,7 +18,6 @@ spec:
   clusterResourceWhitelist:
     - group: '*'
       kind: 'Namespace'
-      name: 'tailscale'
   namespaceResourceWhitelist:
     - group: '*'
       kind: '*'
