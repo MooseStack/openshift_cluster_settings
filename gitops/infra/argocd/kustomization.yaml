@@ -1,6 +1,9 @@
 namespace: openshift-gitops
 
 resources:
+  - app-of-apps_gitrepo.yaml
+  - app-of-apps_appProject.yaml
+  - app-of-apps_parentApp.yaml
   - immich_appProject.yaml
   - pgvector_appProject.yaml
   - tailscale_appProject.yaml
