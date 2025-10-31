@@ -16,7 +16,7 @@ spec:
   # Allow namespace-scoped resources if your apps need them. Remove or restrict
   # this if you want to enforce least privilege.
   clusterResourceWhitelist:
-    - group: ''
+    - group: '*'
       kind: 'Namespace'
       name: 'tailscale'
   namespaceResourceWhitelist:
