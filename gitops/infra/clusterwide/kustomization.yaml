@@ -1,5 +1,10 @@
 # namespace: 
 
 resources:
+  # Primarily using for upping max pod limits on the cluster nodes
   - KubeletConfig.yaml
+  # Setting a default storage class
   - default-storageclass.yaml
+  # resource creations/limits/quotas/etc when new namespaces/projects are created
+  - project-template.yaml
+  - project-config.yaml
