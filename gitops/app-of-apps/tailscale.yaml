@@ -12,7 +12,6 @@ spec:
     repoURL: https://github.com/MooseStack/tailscale_helm.git
     targetRevision: main
     path: tailscale
-    chart: tailscale
     helm:
       valueFiles:
         - values.yaml
