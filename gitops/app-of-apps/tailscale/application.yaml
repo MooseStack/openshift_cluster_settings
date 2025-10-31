@@ -4,20 +4,21 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: app-of-apps
+  name: tailscale
   namespace: openshift-gitops
-  finalizers:
-     # This allows ArgoCD to clean up(delete) child applications when this app is deleted.
-     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: app-of-apps
+  project: tailscale
   source:
-    repoURL: https://github.com/MooseStack/openshift_cluster_settings.git
+    repoURL: https://github.com/MooseStack/tailscale_helm.git
     targetRevision: main
-    path: gitops/app-of-apps
+    path: tailscale
+    chart: tailscale
+    helm:
+      valueFiles:
+        - values.yaml
   destination:
     server: https://kubernetes.default.svc
-    namespace: openshift-gitops
+    namespace: tailscale
   syncPolicy:
     managedNamespaceMetadata:
       labels:
@@ -38,3 +39,8 @@ spec:
         # These are automatically updated on a regular basis. Not ignoring last applied configuration since it's used for computing diffs after normalization.
         - /metadata/annotations/argocd.argoproj.io~1refresh
         - /operation
+    - apiVersion: v1
+      kind: Secret
+      name: tailscale-secret
+      jsonPointers:
+        - /stringData/
