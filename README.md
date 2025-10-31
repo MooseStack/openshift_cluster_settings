@@ -13,10 +13,15 @@ ArgoCD default configurations will give Argo Admin role to the group "cluster-ad
 
 1. Create user and password with htpasswd, and provide cluster-admin to it - view comments in [prerequisites/user_management/1-htpasswd-secret.yaml](prerequisites/user_management/1-htpasswd-secret.yaml), edit, then apply:
   
--  `oc apply -f prerequisites/user_management`
+-  `oc apply -f prerequisites/1-user_management`
 
 
-## 3 - Manage all files in [gitops/infra](gitops/infra) by ArgoCD
+ ## 3 - Manage all files in [gitops/infra](gitops/infra) and [gitops/app-of-apps](gitops/app-of-apps) by ArgoCD
 
-1. Creates ArgoCD project, Connects to https://github.com/MooseStack/openshift_cluster_settings.git, and creates ArgoCD ApplicationSet to track gitops/infra folder:
-  - `oc apply -f gitops/infra/prerequisites`
+1. Creates:
+   - ArgoCD project
+   - Connects to https://github.com/MooseStack/openshift_cluster_settings.git
+   - ArgoCD ApplicationSet to track gitops/infra/<any folder here> folder
+   - app-of-apps parent application pattern to track gitops/app-of-apps/*
+  
+     - `oc apply -f prerequisites/2-argo_bootstrap`

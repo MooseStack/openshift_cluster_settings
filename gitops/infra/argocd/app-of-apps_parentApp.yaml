@@ -19,6 +19,9 @@ spec:
     server: https://kubernetes.default.svc
     namespace: openshift-gitops
   syncPolicy:
+    managedNamespaceMetadata:
+      labels:
+        app.kubernetes.io/managed-by: openshift-gitops
     automated:
       prune: true
       selfHeal: true

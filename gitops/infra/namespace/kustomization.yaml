@@ -1,0 +1,6 @@
+namespace: openshift-config
+
+resources:
+  # resource creations/limits/quotas/etc when new namespaces/projects are created
+  - project-template.yaml
+  - project-config.yaml

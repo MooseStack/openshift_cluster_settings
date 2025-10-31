@@ -1,0 +1,40 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: gitops-infra-applicationset
+  namespace: openshift-gitops
+spec:
+  goTemplate: true
+  generators:
+    # will check github, and create an ArgoCD Application for each folder under gitops/infra/<here>
+    - git:
+        repoURL: https://github.com/MooseStack/openshift_cluster_settings.git
+        revision: main
+        directories:
+          - path: "gitops/infra/*"
+
+  template:
+    metadata:
+      name: "gitops-infra-{{.path.basename}}"
+    spec:
+      project: "gitops-infra"
+      source:
+        repoURL: https://github.com/MooseStack/openshift_cluster_settings.git
+        targetRevision: HEAD
+        path: "gitops/infra/{{ .name }}"
+        kustomize:
+          commonLabels:
+            gitops-managed-by-git-repo: openshift_cluster_settings
+      destination:
+        server: https://kubernetes.default.svc
+        namespace: "{{ .namespace }}" #defined in kustomization.yaml in each folder
+      syncPolicy:
+        automated:
+          prune: true
+          selfHeal: true
+        managedNamespaceMetadata:
+          labels:
+            app.kubernetes.io/managed-by: openshift-gitops
+        syncOptions:
+          - CreateNamespace=true
+          - ServerSideApply=true
