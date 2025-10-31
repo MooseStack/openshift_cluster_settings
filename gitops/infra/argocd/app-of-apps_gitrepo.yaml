@@ -1,7 +1,7 @@
 kind: Secret
 apiVersion: v1
 metadata:
-  name: repo-app-of-apps
+  name: argo-gitrepo-app-of-apps
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: repository

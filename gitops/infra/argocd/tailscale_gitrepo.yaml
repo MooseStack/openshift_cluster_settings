@@ -1,7 +1,7 @@
 kind: Secret
 apiVersion: v1
 metadata:
-  name: tailscale-argo-gitrepo
+  name: argo-gitrepo-tailscale
   namespace: openshift-gitops
   labels:
     argocd.argoproj.io/secret-type: repository
