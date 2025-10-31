@@ -3,6 +3,7 @@ kind: Template
 metadata:
   creationTimestamp: null
   name: project-template
+  namespace: openshift-config
 objects:
 - apiVersion: project.openshift.io/v1
   kind: Project
