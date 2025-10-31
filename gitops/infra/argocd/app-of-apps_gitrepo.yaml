@@ -1,0 +1,14 @@
+kind: Secret
+apiVersion: v1
+metadata:
+  name: repo-app-of-apps
+  namespace: openshift-gitops
+  labels:
+    argocd.argoproj.io/secret-type: repository
+  annotations:
+    managed-by: argocd.argoproj.io
+data:
+  project: YXBwLW9mLWFwcHM= #app-of-apps
+  type: Z2l0 #git
+  url: aHR0cHM6Ly9naXRodWIuY29tL01vb3NlU3RhY2svb3BlbnNoaWZ0X2NsdXN0ZXJfc2V0dGluZ3MuZ2l0 #https://github.com/MooseStack/openshift_cluster_settings.git
+type: Opaque

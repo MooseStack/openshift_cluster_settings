@@ -1,0 +1,15 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app-of-apps
+  namespace: openshift-gitops
+spec:
+  description: "Argo CD project for app-of-apps pattern"
+  sourceRepos:
+    - 'https://github.com/MooseStack/openshift_cluster_settings.git'
+  destinations:
+    - namespace: '*'
+      server: 'https://kubernetes.default.svc'
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
