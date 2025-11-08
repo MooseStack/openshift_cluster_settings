@@ -1,5 +1,5 @@
-apiVersion: metallb.io/v1alpha1
-kind: AddressPool
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
 metadata:
   namespace: metallb-system
   name: addresspool
@@ -8,5 +8,6 @@ metadata:
     argocd.argoproj.io/sync-wave: "2"
 spec:
   protocol: layer2
+  autoAssign: true
   addresses:
     - 10.0.0.200-10.0.0.250
