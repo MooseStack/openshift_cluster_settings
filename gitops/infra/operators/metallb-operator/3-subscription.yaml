@@ -5,5 +5,7 @@ metadata:
   namespace: metallb-system
 spec:
   name: metallb-operator
+  channel: stable
+  installPlanApproval: Automatic
   source: redhat-operators
   sourceNamespace: openshift-marketplace
