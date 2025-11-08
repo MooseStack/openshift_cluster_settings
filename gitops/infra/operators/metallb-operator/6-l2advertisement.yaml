@@ -3,6 +3,9 @@ apiVersion: metallb.io/v1beta1
 metadata:
   name: l2-advertisement
   namespace: metallb-system
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "3"
 spec:
   ipAddressPools:
     - addresspool
