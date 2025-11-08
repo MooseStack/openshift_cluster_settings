@@ -3,9 +3,6 @@ kind: IPAddressPool
 metadata:
   namespace: metallb-system
   name: addresspool
-  annotations:
-    argocd.argoproj.io/hook: PostSync
-    argocd.argoproj.io/sync-wave: "2"
 spec:
   autoAssign: true
   addresses:
