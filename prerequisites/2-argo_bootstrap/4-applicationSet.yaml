@@ -37,7 +37,7 @@ spec:
           {{- if eq .path.basename "namespace" -}}
             openshift-config
           {{- else -}}
-            default
+            gitops-infra
           {{- end -}}
 
       syncPolicy:
