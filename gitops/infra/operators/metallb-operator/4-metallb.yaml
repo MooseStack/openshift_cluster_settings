@@ -5,3 +5,4 @@ metadata:
   namespace: metallb-system
   annotations:
     argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "1"

@@ -4,4 +4,5 @@ resources:
   - 1-namespace.yaml
   - 2-operatorgroup.yaml
   - 3-subscription.yaml
-  # - 4-metallb.yaml
+  - 4-metallb.yaml
+  - 5-addresspool.yaml

@@ -1,0 +1,12 @@
+apiVersion: metallb.io/v1alpha1
+kind: AddressPool
+metadata:
+  namespace: metallb-system
+  name: addresspool
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/sync-wave: "2"
+spec:
+  protocol: layer2
+  addresses:
+    - 10.0.0.200-10.0.0.250
