@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: cert-manager-operator
+  # needed for cert-manager resources such as webhooks, listeners, issuers, etc
+  name: cert-manager
   labels:
     app.kubernetes.io/managed-by: openshift-gitops
     argocd.argoproj.io/managed-by: openshift-gitops
