@@ -28,7 +28,7 @@ spec:
         targetRevision: HEAD
         path: "{{.path.path}}"
         kustomize:
-          labels:
+          commonLabels:
             gitops-managed-by-git-repo: openshift_cluster_settings
 
       destination:
@@ -53,3 +53,8 @@ spec:
         syncOptions:
           - CreateNamespace=true
           - ServerSideApply=true
+          - Retry=true
+          
+        retry:
+          limit: 2
+            
