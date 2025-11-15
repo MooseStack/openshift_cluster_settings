@@ -58,3 +58,7 @@ spec:
         retry:
           limit: 2
             
+  # Ignore the automated field to allow manual disabling
+  ignoreApplicationDifferences:
+    - jsonPointers:
+        - /spec/syncPolicy/automated
