@@ -5,5 +5,3 @@ metadata:
   labels:
     app.kubernetes.io/managed-by: openshift-gitops
     argocd.argoproj.io/managed-by: openshift-gitops
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
