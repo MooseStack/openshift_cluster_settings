@@ -1,4 +1,4 @@
 resources:
   - metallb-operator/
   - devspaces/
-  - cert-manager/
+  #- cert-manager/
