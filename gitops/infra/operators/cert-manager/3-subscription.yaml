@@ -5,6 +5,7 @@ metadata:
   namespace: cert-manager-operator
   annotations:
     argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/hook: PreSync
 spec:
   name: openshift-cert-manager-operator
   channel: stable

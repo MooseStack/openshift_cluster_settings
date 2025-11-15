@@ -5,3 +5,4 @@ metadata:
   namespace: cert-manager-operator
   annotations:
     argocd.argoproj.io/sync-wave: "2"
+    argocd.argoproj.io/hook: PreSync
