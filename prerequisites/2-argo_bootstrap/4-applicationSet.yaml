@@ -28,7 +28,7 @@ spec:
         targetRevision: HEAD
         path: "{{.path.path}}"
         kustomize:
-          commonLabels:
+          labels:
             gitops-managed-by-git-repo: openshift_cluster_settings
 
       destination:

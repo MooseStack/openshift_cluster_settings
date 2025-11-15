@@ -1,4 +1,4 @@
-namespace: openshift-devspaces
+namespace: cert-manager-operator
 
 resources:
   - 1-namespace.yaml
