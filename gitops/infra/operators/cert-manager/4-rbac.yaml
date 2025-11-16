@@ -5,7 +5,7 @@ metadata:
 rules:
 - apiGroups: ["cert-manager.io"]
   resources: ["clusterissuers"]
-  verbs: ["create", "get", "list", "watch", "update", "delete"]
+  verbs: ["*"]
 
 ---
 
