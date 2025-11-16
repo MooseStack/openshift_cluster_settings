@@ -1,4 +1,4 @@
-namespace: cert-manager-operator
+namespace: cert-manager
 
 resources:
   # - 1-namespace.yaml
