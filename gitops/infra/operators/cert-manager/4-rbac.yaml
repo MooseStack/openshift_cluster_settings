@@ -2,6 +2,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
   name: argocd-cert-manager-clusterissuers-role
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
 rules:
 - apiGroups: ["cert-manager.io"]
   resources: ["clusterissuers"]
@@ -13,6 +15,8 @@ apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRoleBinding
 metadata:
   name: argocd-cert-manager-clusterissuers-binding
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
 subjects:
 - kind: ServiceAccount
   name: openshift-gitops-argocd-application-controller

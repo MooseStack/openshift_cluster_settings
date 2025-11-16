@@ -5,6 +5,6 @@ metadata:
   name: selfsigned-cluster-issuer
   namespace: cert-manager
   annotations:
-    argocd.argoproj.io/sync-wave: "4"
+    argocd.argoproj.io/sync-wave: "5"
 spec:
   selfSigned: {}
