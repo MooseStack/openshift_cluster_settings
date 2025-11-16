@@ -1,20 +1,7 @@
-## Will be auto created by operator
-# apiVersion: v1
-# kind: Namespace
-# metadata:
-#   name: cert-manager-operator
-#   labels:
-#     app.kubernetes.io/managed-by: openshift-gitops
-#     argocd.argoproj.io/managed-by: openshift-gitops
-#   annotations:
-#     argocd.argoproj.io/sync-wave: "1"
----
-
 apiVersion: v1
 kind: Namespace
 metadata:
-  # needed for cert-manager resources such as webhooks, listeners, issuers, etc
-  name: cert-manager
+  name: cert-manager-operator
   labels:
     app.kubernetes.io/managed-by: openshift-gitops
     argocd.argoproj.io/managed-by: openshift-gitops
