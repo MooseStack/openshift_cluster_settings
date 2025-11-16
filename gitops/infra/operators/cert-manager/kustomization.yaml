@@ -1,7 +1,7 @@
 namespace: cert-manager-operator
 
 resources:
-  - 1-namespace.yaml
+  # - 1-namespace.yaml
   - 2-operatorgroup.yaml
   - 3-subscription.yaml
   - 4-clusterissuer.yaml
