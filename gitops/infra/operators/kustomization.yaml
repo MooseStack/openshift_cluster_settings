@@ -2,3 +2,4 @@ resources:
   - metallb-operator/
   - devspaces/
   - cert-manager/
+  - pipelines/
