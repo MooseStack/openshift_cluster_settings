@@ -1,4 +1,4 @@
-namespace: openshift-pipelines
+namespace: openshift-web-terminal
 
 resources:
   - 1-namespace.yaml
