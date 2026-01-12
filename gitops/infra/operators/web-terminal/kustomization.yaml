@@ -1,0 +1,6 @@
+namespace: openshift-pipelines
+
+resources:
+  - 1-namespace.yaml
+  - 2-operatorgroup.yaml
+  - 3-subscription.yaml

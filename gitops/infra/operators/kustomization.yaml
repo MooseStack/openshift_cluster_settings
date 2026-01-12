@@ -3,3 +3,4 @@ resources:
   - devspaces/
   - cert-manager/
   - pipelines/
+  - web-terminal/
