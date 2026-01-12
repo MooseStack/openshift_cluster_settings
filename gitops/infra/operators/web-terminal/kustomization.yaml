@@ -1,4 +1,4 @@
-namespace: web-terminal-operator
+namespace: openshift-operators
 
 resources:
   - 1-namespace.yaml

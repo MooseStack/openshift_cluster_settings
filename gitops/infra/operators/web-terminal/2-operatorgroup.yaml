@@ -2,6 +2,6 @@ apiVersion: operators.coreos.com/v1
 kind: OperatorGroup
 metadata:
   name: web-terminal-operatorgroup
-  namespace: web-terminal-operator
+  namespace: openshift-operators
   annotations:
     argocd.argoproj.io/sync-wave: "2"
