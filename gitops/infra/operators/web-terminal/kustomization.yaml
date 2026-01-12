@@ -1,5 +1,0 @@
-namespace: openshift-operators
-
-resources:
-  - 2-operatorgroup.yaml
-  - 3-subscription.yaml
