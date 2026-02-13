@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: kernel-module-management-sub
+  namespace: openshift-kmm
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  name: kernel-module-management
+  channel: stable
+  installPlanApproval: Automatic
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
