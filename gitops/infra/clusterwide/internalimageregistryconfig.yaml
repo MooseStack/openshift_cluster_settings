@@ -1,0 +1,20 @@
+apiVersion: imageregistry.operator.openshift.io/v1
+kind: Config
+metadata:
+  name: cluster
+spec:
+  logLevel: Normal
+  rolloutStrategy: RollingUpdate
+  operatorLogLevel: Normal
+  requests:
+    read:
+      maxWaitInQueue: 0s
+    write:
+      maxWaitInQueue: 0s
+  observedConfig: null
+  managementState: Managed # this installs the internal registry. To disable, set to "Removed"
+  proxy: {}
+  unsupportedConfigOverrides: null
+  storage:
+    emptyDir: {}
+  replicas: 1

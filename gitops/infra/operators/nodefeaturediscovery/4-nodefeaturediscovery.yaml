@@ -7,7 +7,7 @@ metadata:
   annotations:
     argocd.argoproj.io/sync-wave: "4"
 spec:
-  # dont set for ocp version under 4.17
+  # dont set for ocp version newer than 4.17
   # operand:
   #   image: quay.io/openshift/origin-node-feature-discovery:latest
   #   imagePullPolicy: IfNotPresent
