@@ -1,4 +1,4 @@
-namespace: openshift-nfd
+namespace: openshift-kmm
 
 resources:
   - 1-namespace.yaml
