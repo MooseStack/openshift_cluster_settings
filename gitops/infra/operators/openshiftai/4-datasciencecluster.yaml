@@ -3,6 +3,8 @@ apiVersion: datasciencecluster.opendatahub.io/v1
 metadata:
   name: default-dsc
   namespace: redhat-ods-operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
   labels:
     app.kubernetes.io/name: datasciencecluster
     app.kubernetes.io/instance: default-dsc

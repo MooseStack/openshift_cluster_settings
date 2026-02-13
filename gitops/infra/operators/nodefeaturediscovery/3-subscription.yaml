@@ -1,0 +1,13 @@
+apiVersion: operators.coreos.com/v1alpha1
+kind: Subscription
+metadata:
+  name: nodefeaturediscovery-sub
+  namespace: openshift-nfd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+spec:
+  name: nfd
+  channel: stable
+  installPlanApproval: Automatic
+  source: redhat-operators
+  sourceNamespace: openshift-marketplace
