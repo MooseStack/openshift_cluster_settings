@@ -1,0 +1,21 @@
+# After adding amdgpu kernel module to blacklist by using MachineConfig custom resource, the Machine Config Operator will automatically reboot selected nodes.
+
+apiVersion: machineconfiguration.openshift.io/v1
+kind: MachineConfig
+metadata:
+  labels:
+    machineconfiguration.openshift.io/role: worker
+  name: amdgpu-module-blacklist
+  annotations:
+    argocd.argoproj.io/sync-wave: "5" # run after gitops/infra/operators/nodefeaturediscovery/4-nodefeaturediscovery.yaml
+spec:
+  config:
+    ignition:
+      version: 3.2.0
+    storage:
+      files:
+        - path: "/etc/modprobe.d/amdgpu-blacklist.conf"
+          mode: 420
+          overwrite: true
+          contents:
+            source: "data:text/plain;base64,YmxhY2tsaXN0IGFtZGdwdQo="
