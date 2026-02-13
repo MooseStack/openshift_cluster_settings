@@ -4,7 +4,7 @@ apiVersion: machineconfiguration.openshift.io/v1
 kind: MachineConfig
 metadata:
   labels:
-    machineconfiguration.openshift.io/role: worker
+    machineconfiguration.openshift.io/role: master # or "worker" if not Single Node OpenShift (SNO)
   name: amdgpu-module-blacklist
   annotations:
     argocd.argoproj.io/sync-wave: "5" # run after gitops/infra/operators/nodefeaturediscovery/4-nodefeaturediscovery.yaml
