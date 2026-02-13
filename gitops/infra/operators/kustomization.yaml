@@ -4,7 +4,8 @@ resources:
   - cert-manager/
   - pipelines/
   - openshiftai/
-  
+
   # GPU enabling operators:
   - nodefeaturediscovery/
   - kernel-module-management/
+  - amd-gpu-operator/
