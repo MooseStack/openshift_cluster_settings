@@ -5,3 +5,5 @@ resources:
   - KubeletConfig.yaml
   # Setting a default storage class
   - default-storageclass.yaml
+  # Setting up internal image registry
+  - internalimageregistryconfig.yaml
