@@ -5,6 +5,7 @@ resources:
   - pipelines/
   - openshiftai/
   - servicemeshoperator3/ #used by openshiftai
+  - serverless-operator/ #used by openshiftai
 
   # GPU enabling operators:
   - nodefeaturediscovery/
