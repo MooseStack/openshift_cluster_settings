@@ -1,0 +1,7 @@
+apiVersion: operators.coreos.com/v1
+kind: OperatorGroup
+metadata:
+  name: openshiftai-operatorgroup
+  namespace: openshift-servicemesh
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"

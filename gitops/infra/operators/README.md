@@ -15,3 +15,5 @@
 - [gitops/infra/operators/kernel-module-management](kernel-module-management): manages, builds, signs, and deploys out-of-tree kernel modules and device plugins. 
 
 - [gitops/infra/operators/nodefeaturediscovery](nodefeaturediscovery): Labels nodes with the detected hardware features and systems, such as PCI cards, kernel, OS versions, etc.
+  
+- [gitops/infra/operators/amd-gpu-operator](amd-gpu-operator):Collect worker node system specifications, Build or retrieve the appropriate driver image, Deploy the driver using KMM, and Deploy the ROCM device plugin and node labeller

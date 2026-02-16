@@ -4,6 +4,7 @@ resources:
   - cert-manager/
   - pipelines/
   - openshiftai/
+  - servicemeshoperator3/ #used by openshiftai
 
   # GPU enabling operators:
   - nodefeaturediscovery/
