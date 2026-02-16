@@ -1,0 +1,9 @@
+kind: IstioCNI
+apiVersion: sailoperator.io/v1
+metadata:
+  name: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "5"
+spec:
+  namespace: openshift-servicemesh
+  version: v1.27.3

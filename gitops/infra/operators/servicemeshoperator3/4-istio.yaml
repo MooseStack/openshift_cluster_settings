@@ -1,0 +1,12 @@
+kind: Istio
+apiVersion: sailoperator.io/v1
+metadata:
+  name: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "4"
+spec:
+  namespace: openshift-servicemesh
+  updateStrategy:
+    inactiveRevisionDeletionGracePeriodSeconds: 30
+    type: InPlace
+  version: v1.27.3
