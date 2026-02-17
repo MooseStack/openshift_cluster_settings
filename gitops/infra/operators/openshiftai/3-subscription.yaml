@@ -7,7 +7,7 @@ metadata:
     argocd.argoproj.io/sync-wave: "3"
 spec:
   name: rhods-operator
-  channel: stable
+  channel: fast-3.x # "stable" channel is best, but is based on v2.
   installPlanApproval: Automatic
   source: redhat-operators
   sourceNamespace: openshift-marketplace

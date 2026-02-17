@@ -27,14 +27,14 @@ spec:
         ingressGateway:
           certificate:
             type: OpenshiftDefaultIngress
-        managementState: Managed
+        managementState: Managed # Requires knative-serving/OpenShift Serverless operator if enabled / "Managed"
         name: knative-serving
     llamastackoperator:
       managementState: Removed
     kueue:
       managementState: Managed
     modelmeshserving:
-      managementState: Removed # Requires service mesh operator if enabled / "Managed"
+      managementState: Managed # Requires service mesh operator if enabled / "Managed"
     modelregistry:
       managementState: Managed
       registriesNamespace: rhoai-model-registries
