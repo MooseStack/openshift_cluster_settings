@@ -34,7 +34,7 @@ spec:
     kueue:
       managementState: Managed
     modelmeshserving:
-      managementState: Managed
+      managementState: Removed # Requires service mesh operator if enabled / "Managed"
     modelregistry:
       managementState: Managed
       registriesNamespace: rhoai-model-registries
