@@ -1,5 +1,6 @@
+#v3 of RHOAI operator.
 kind: DataScienceCluster
-apiVersion: datasciencecluster.opendatahub.io/v1
+apiVersion: datasciencecluster.opendatahub.io/v2
 metadata:
   name: default-dsc
   namespace: redhat-ods-operator
@@ -7,34 +8,26 @@ metadata:
     argocd.argoproj.io/sync-wave: "4"
   labels:
     app.kubernetes.io/name: datasciencecluster
-    app.kubernetes.io/instance: default-dsc
-    app.kubernetes.io/part-of: rhods-operator
-    app.kubernetes.io/managed-by: kustomize
-    app.kubernetes.io/created-by: rhods-operator
 spec:
   components:
-    codeflare:
+    modelmeshserving:
       managementState: Managed
     dashboard:
       managementState: Managed
-    datasciencepipelines:
+    aipipelines:
       managementState: Managed
     feastoperator:
-      managementState: Removed
+      managementState: Managed
     kserve:
       managementState: Managed
       serving:
-        ingressGateway:
-          certificate:
-            type: OpenshiftDefaultIngress
-        managementState: Managed # Requires knative-serving/OpenShift Serverless operator if enabled / "Managed"
-        name: knative-serving
+        managementState: Unmanaged
     llamastackoperator:
       managementState: Removed
     kueue:
-      managementState: Managed
-    modelmeshserving:
-      managementState: Managed # Requires service mesh operator if enabled / "Managed"
+      managementState: Removed
+    mlflowoperator:
+      managementState: Removed
     modelregistry:
       managementState: Managed
       registriesNamespace: rhoai-model-registries
