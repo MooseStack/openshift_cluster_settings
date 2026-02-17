@@ -1,8 +1,4 @@
-namespace: openshift-serverless
-
 resources:
-  - 1-namespace.yaml
-  - 2-operatorgroup.yaml
-  - 3-subscription.yaml
-  - 4-knativeserving.yaml
+  - 1-openshift-serverless-namespace/ #resources for installing the operator in openshift-serverless namespace
+  - 2-knative-serving-namespace/ #resources for installing knative-serving in knative-serving namespace
 

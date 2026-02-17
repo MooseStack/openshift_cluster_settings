@@ -1,0 +1,5 @@
+namespace: knative-serving # this namespace gets auto created by operator
+
+resources:
+  - 4-knativeserving.yaml
+
