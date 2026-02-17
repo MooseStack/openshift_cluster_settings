@@ -4,7 +4,7 @@ resources:
   - cert-manager/
   - pipelines/
   - openshiftai/
-  - servicemeshoperator3/ #used by openshiftai
+  # - servicemeshoperator3/ #used by openshiftai. - Disabled, new v3 operator of RHOAI installs a separate Service Mesh 3 operator even if current one is already installed.
   - serverless-operator/ #used by openshiftai
 
   # GPU enabling operators:

@@ -16,6 +16,7 @@
   
 - [gitops/infra/operators/servicemeshoperator3](servicemeshoperator3): Based on the upstream [Istio](https://istio.io/) for service mesh.
   - OpenShift AI is dependent on this for mesh services.
+  - Disabled the install from here since the new RHOAI v3 operator auto installs one no matter what. Upcoming feature/bugfix pending for this.
 
 ## GPU enabling operators:
 - [gitops/infra/operators/kernel-module-management](kernel-module-management): manages, builds, signs, and deploys out-of-tree kernel modules and device plugins. 
